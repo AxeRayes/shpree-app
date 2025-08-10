@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Shpree",
     images: [
       {
-        url: "/og-image.jpg", // ✅ Local file in public folder
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Shpree – Real-time Price Drop Tracker",
@@ -27,7 +27,10 @@ export const metadata: Metadata = {
     title: "Shpree – Real-time Price Drop Tracker",
     description:
       "Track price drops, get instant alerts, and check price history instantly.",
-    images: ["/og-image.jpg"], // ✅ Local file in public folder
+    images: ["/og-image.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico", // ✅ or .png if you uploaded PNG
   },
 };
 
@@ -38,6 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>{children}</body>
     </html>
   );
