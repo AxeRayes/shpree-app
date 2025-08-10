@@ -1,91 +1,196 @@
+/* app/page.tsx */
+import Link from "next/link";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white text-slate-900">
-      <div className="mx-auto max-w-4xl px-6 py-20">
-        {/* Brand / Hero */}
-        <header className="text-center">
-          {/* Logo mark */}
-          <div className="mx-auto mb-6 h-14 w-14 rounded-2xl bg-slate-900 text-white grid place-items-center shadow">
-            {/* Spark icon */}
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M12 2l2.1 5.7L20 10l-5.9 2.3L12 18l-2.1-5.7L4 10l5.9-2.3L12 2z" fill="currentColor"/>
-            </svg>
-          </div>
+      {/* Header */}
+      <header className="sticky top-0 z-20 bg-white/70 backdrop-blur border-b border-slate-100">
+        <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3">
+            <img src="/logo-full-light.png" alt="Shpree" className="h-8 w-auto" />
+            <span className="sr-only">Shpree</span>
+          </Link>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
+            <a href="#features" className="hover:text-slate-900">Features</a>
+            <a href="#how" className="hover:text-slate-900">How it works</a>
+            <a href="#faq" className="hover:text-slate-900">FAQ</a>
+            <a href="https://t.me/shpree_deals" className="hover:text-slate-900">Telegram</a>
+            <a href="/disclosure" className="hover:text-slate-900">Disclosure</a>
+          </nav>
+          <a
+            href="#waitlist"
+            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white"
+            style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
+          >
+            Get early access
+          </a>
+        </div>
+      </header>
 
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Shpree</h1>
-          <p className="mt-3 text-lg text-slate-700">Find the drop. Grab the deal.</p>
-          <p className="mt-1 text-sm text-slate-500">
-            Real-time price-drop tracker with instant alerts & price history.
-          </p>
-        </header>
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-10 text-center">
+        <img src="/logo-full-light.png" alt="Shpree" className="mx-auto mb-4 h-12 w-auto" />
+        <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight">
+          Find the drop. Grab the deal.
+        </h1>
+        <p className="mt-3 text-lg text-slate-700 max-w-2xl mx-auto">
+          Real-time price-drop alerts, price history charts, and smart tracking
+          so you never overpay again.
+        </p>
 
-        {/* Card */}
-        <section className="mx-auto mt-10 max-w-2xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-6 md:p-8 shadow-sm">
-          <h2 className="text-xl font-semibold">Get early access</h2>
-          <p className="mt-1 text-sm text-slate-600">
-            Join the waitlist — we’ll notify you when alerts launch.
-          </p>
-
-          {/* Form */}
-          <form action="/api/subscribe" method="POST" className="mt-5 flex flex-col sm:flex-row gap-3">
+        {/* Waitlist form */}
+        <div id="waitlist" className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm">
+          <form action="/api/subscribe" method="POST" className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               name="email"
               required
               placeholder="you@example.com"
-              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none ring-0 focus:border-slate-400"
+              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white bg-slate-900 hover:opacity-95 active:opacity-90 transition"
+              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
+              style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
             >
               Notify me
             </button>
           </form>
-
           <p className="mt-3 text-xs text-slate-500">
             We’ll only email you about Shpree. Unsubscribe anytime.
           </p>
+        </div>
 
-          {/* Telegram CTA */}
-          <div className="mt-6">
-            <a
-              href="https://t.me/shpree_deals"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-900 px-5 py-3 text-slate-900 hover:bg-slate-50 transition"
-            >
-              {/* Telegram icon */}
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden fill="currentColor">
-                <path d="M9.94 15.54l-.4 5.64c.57 0 .81-.25 1.1-.55l2.64-2.52 5.47 4c1 .56 1.71.27 1.98-.93l3.59-16.84C24.56 2.4 23.84 1.9 22.9 2.3L1.12 10.69c-1.45.57-1.43 1.38-.25 1.75l5.58 1.74L19.38 6.5c.7-.43 1.34-.2.82.28L9.94 15.54z"/>
-              </svg>
-              Open Telegram Channel
-            </a>
-          </div>
-        </section>
+        {/* Social proof strip (placeholder) */}
+        <div className="mt-10 text-xs uppercase tracking-wide text-slate-500">
+          Trusted by deal hunters & creators worldwide
+        </div>
+      </section>
 
-        {/* Mini “How it works” */}
-        <section className="mt-12 grid gap-6 sm:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 p-5">
-            <p className="text-sm font-semibold">1) Track items</p>
-            <p className="mt-1 text-sm text-slate-600">Add a product or category to your watchlist.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 p-5">
-            <p className="text-sm font-semibold">2) Get instant alerts</p>
-            <p className="mt-1 text-sm text-slate-600">We ping you the moment the price drops or a coupon appears.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 p-5">
-            <p className="text-sm font-semibold">3) Check price history</p>
-            <p className="mt-1 text-sm text-slate-600">See past prices so you know you’re getting a real deal.</p>
-          </div>
-        </section>
+      {/* Features */}
+      <section id="features" className="mx-auto max-w-6xl px-6 py-12">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Feature
+            title="Instant price alerts"
+            body="Get notified the moment a product drops below your target or a new coupon appears."
+          />
+          <Feature
+            title="Price history"
+            body="See historical price charts so you know if today’s deal is truly the lowest."
+          />
+          <Feature
+            title="Smart tracking"
+            body="Track products or entire categories (e.g., Monitors under $300, VPN deals in the UK)."
+          />
+          <Feature
+            title="Multi-merchant coverage"
+            body="We scan multiple stores automatically so you always get the best current offer."
+          />
+          <Feature
+            title="Auto-curated top drops"
+            body="Our ‘Spree Score’ ranks deals by discount, history, and reliability."
+          />
+          <Feature
+            title="Telegram + Email"
+            body="Choose instant Telegram pings or a daily email digest—set it and forget it."
+          />
+        </div>
+      </section>
 
-        {/* Footer */}
-        <footer className="mt-14 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Shpree · An operating brand of Rayes Group ·
-          <a className="ml-1 underline" href="/disclosure">Affiliate Disclosure</a> ·
-          <a className="ml-1 underline" href="/privacy">Privacy</a> ·
-          <a className="ml-1 underline" href="/terms">Terms</a>
-        </footer>
-      </div>
+      {/* How it works */}
+      <section id="how" className="mx-auto max-w-6xl px-6 py-12">
+        <h2 className="brand-heading text-2xl font-semibold text-center">How it works</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          <Step n="1" title="Pick what to track" body="Paste a product link or pick a category. Set your target price." />
+          <Step n="2" title="We monitor nonstop" body="Our bots watch prices and coupons 24/7 across merchants." />
+          <Step n="3" title="You get the drop" body="Instant alert with the best link. Buy it at the right time." />
+        </div>
+        <div className="text-center mt-10">
+          <a
+            href="#waitlist"
+            className="inline-flex items-center rounded-xl px-5 py-3 font-medium text-white"
+            style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
+          >
+            Join the waitlist
+          </a>
+        </div>
+      </section>
+
+      {/* Telegram CTA */}
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <div className="rounded-3xl border border-slate-200 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-white">
+          <div>
+            <h3 className="brand-heading text-xl font-semibold">Daily drops on Telegram</h3>
+            <p className="mt-1 text-slate-600">Get today’s biggest price cuts straight to your phone.</p>
+          </div>
+          <a
+            href="https://t.me/shpree_deals"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-900 px-5 py-3 font-medium text-slate-900 hover:bg-slate-50 transition"
+          >
+            Open Telegram Channel
+          </a>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-6xl px-6 pb-14">
+        <h2 className="brand-heading text-2xl font-semibold text-center">FAQ</h2>
+        <div className="mt-8 grid gap-4">
+          <Faq q="Is Shpree free?" a="Yes, you can browse top drops and get the daily email free. Pro adds instant alerts, advanced filters, and full price history." />
+          <Faq q="Which stores do you cover?" a="We start with major electronics and digital merchants, and add more weekly. The system prioritizes reputable merchants." />
+          <Faq q="How do alerts work?" a="Add an item or category, set your threshold, and choose Telegram/push/email. We ping you instantly when it drops." />
+          <Faq q="When is launch?" a="We’re onboarding early users now. Join the waitlist and you’ll be first in when Pro alerts open." />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-100">
+        <div className="mx-auto max-w-6xl px-6 py-8 text-xs text-slate-500 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+          <div>© {new Date().getFullYear()} Shpree · An operating brand of Rayes Group</div>
+          <div className="flex gap-4">
+            <a href="/disclosure" className="underline">Affiliate Disclosure</a>
+            <a href="/privacy" className="underline">Privacy</a>
+            <a href="/terms" className="underline">Terms</a>
+          </div>
+        </div>
+      </footer>
     </main>
+  );
+}
+
+/* tiny presentational components */
+function Feature({ title, body }: { title: string; body: string }) {
+  return (
+    <div className="rounded-2xl border border-slate-200 p-5 bg-white">
+      <p className="brand-heading text-sm font-semibold">{title}</p>
+      <p className="mt-1 text-sm text-slate-600">{body}</p>
+    </div>
+  );
+}
+
+function Step({ n, title, body }: { n: string; title: string; body: string }) {
+  return (
+    <div className="rounded-2xl border border-slate-200 p-6 bg-white text-center">
+      <div
+        className="mx-auto mb-3 h-10 w-10 rounded-xl text-white grid place-items-center"
+        style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
+      >
+        {n}
+      </div>
+      <p className="brand-heading text-sm font-semibold">{title}</p>
+      <p className="mt-1 text-sm text-slate-600">{body}</p>
+    </div>
+  );
+}
+
+function Faq({ q, a }: { q: string; a: string }) {
+  return (
+    <details className="rounded-xl border border-slate-200 bg-white p-4">
+      <summary className="cursor-pointer list-none">
+        <span className="brand-heading text-sm font-semibold">{q}</span>
+      </summary>
+      <p className="mt-2 text-sm text-slate-600">{a}</p>
+    </details>
   );
 }
