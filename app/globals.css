@@ -49,3 +49,56 @@ img {
   height: auto;
   display: block;
 }
+
+@import "tailwindcss";
+
+/* === Shpree Global Theme === */
+@theme {
+  /* Brand colors (from logo) */
+  --color-brand: #112D4E;     /* Dark Navy */
+  --color-accent: #F58634;    /* Orange */
+
+  /* Neutral colors */
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  /* Fonts */
+  --font-sans: var(--font-poppins), var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-heading: var(--font-poppins), var(--font-inter), sans-serif;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
+  }
+}
+
+/* === Base styles === */
+html, body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings use heading font */
+h1, h2, h3, .brand-heading {
+  font-family: var(--font-heading);
+}
+
+/* Reset link styles to inherit text color unless styled */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
