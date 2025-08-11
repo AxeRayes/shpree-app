@@ -31,7 +31,7 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-10 text-center">
-        <img src="/logo-full-light.png" alt="Shpree" className="logo mx-auto mb-4 h-32 w-auto" />
+        <img src="/logo-full-light.png" alt="Shpree" className="logo mx-auto mb-4 h-16 w-auto" />
         <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight">
           Find the drop. Grab the deal.
         </h1>
