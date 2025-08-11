@@ -8,7 +8,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-100">
         <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo-horizontal.png" alt="Shpree" className="logo h-0 w-auto" />
+            <img src="/logo-horizontal.png" alt="Shpree" className="logo h-18 w-auto" />
             <span className="sr-only">Shpree</span>
           </Link>
 
