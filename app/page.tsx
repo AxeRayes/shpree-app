@@ -10,7 +10,7 @@ export default function HomePage() {
             <img
               src="/logo-horizontal.png"
               alt="Shpree"
-              style={{ height: "18px", width: "auto" }}
+              style={{ height: "26px", width: "auto" }}
             />
             <span className="sr-only">Shpree</span>
           </Link>
@@ -36,7 +36,7 @@ export default function HomePage() {
         <img
           src="/logo-full-light.png"
           alt="Shpree"
-          style={{ height: "110px", width: "auto", margin: "0 auto" }}
+          style={{ height: "140px", width: "auto", margin: "0 auto" }}
         />
         <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight mt-4">
           Find the drop. Grab the deal.
