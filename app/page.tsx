@@ -4,13 +4,14 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-brand">
-      {/* Header (no placeholder icons) */}
+      {/* Header (brand only, no placeholders) */}
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-100">
         <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <img src="/logo-full-light.png" alt="Shpree" className="h-10 w-auto" />
             <span className="sr-only">Shpree</span>
           </Link>
+
           <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
             <a href="#features" className="hover:text-brand">Features</a>
             <a href="#how" className="hover:text-brand">How it works</a>
@@ -18,6 +19,7 @@ export default function HomePage() {
             <a href="https://t.me/shpree_deals" className="hover:text-brand">Telegram</a>
             <a href="/disclosure" className="hover:text-brand">Disclosure</a>
           </nav>
+
           <a
             href="#waitlist"
             className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white bg-brand hover:opacity-95 active:opacity-90"
@@ -27,7 +29,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero (no placeholder strip) */}
+      {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-10 text-center">
         <img src="/logo-full-light.png" alt="Shpree" className="mx-auto mb-4 h-64 w-auto" />
         <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight">
@@ -39,7 +41,10 @@ export default function HomePage() {
         </p>
 
         {/* Waitlist form */}
-        <div id="waitlist" className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white p-4 md:p-5 shadow-sm">
+        <div
+          id="waitlist"
+          className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white p-4 md:p-5 shadow-sm"
+        >
           <form action="/api/subscribe" method="POST" className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
