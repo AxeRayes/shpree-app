@@ -1,28 +1,30 @@
-/* app/page.tsx */
 import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white text-brand">
-      {/* Header (brand only, no placeholders) */}
-      <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-100">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white text-slate-900">
+      {/* Header */}
+      <header className="sticky top-0 z-20 bg-white/70 backdrop-blur border-b border-slate-100">
         <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo-horizontal.png" alt="Shpree" className="logo h-18 w-auto" />
+            <img
+              src="/logo-horizontal.png"
+              alt="Shpree"
+              style={{ height: "18px", width: "auto" }}
+            />
             <span className="sr-only">Shpree</span>
           </Link>
-
           <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
-            <a href="#features" className="hover:text-brand">Features</a>
-            <a href="#how" className="hover:text-brand">How it works</a>
-            <a href="#faq" className="hover:text-brand">FAQ</a>
-            <a href="https://t.me/shpree_deals" className="hover:text-brand">Telegram</a>
-            <a href="/disclosure" className="hover:text-brand">Disclosure</a>
+            <a href="#features" className="hover:text-slate-900">Features</a>
+            <a href="#how" className="hover:text-slate-900">How it works</a>
+            <a href="#faq" className="hover:text-slate-900">FAQ</a>
+            <a href="https://t.me/shpree_deals" className="hover:text-slate-900">Telegram</a>
+            <a href="/disclosure" className="hover:text-slate-900">Disclosure</a>
           </nav>
-
           <a
             href="#waitlist"
-            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white bg-brand hover:opacity-95 active:opacity-90"
+            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white"
+            style={{ backgroundColor: "var(--brand-primary,#00B4D8)", color: "#fff" }}
           >
             Get early access
           </a>
@@ -31,8 +33,12 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-10 text-center">
-        <img src="/logo-full-light.png" alt="Shpree" className="logo mx-auto mb-4 h-16 w-auto" />
-        <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight">
+        <img
+          src="/logo-full-light.png"
+          alt="Shpree"
+          style={{ height: "110px", width: "auto", margin: "0 auto" }}
+        />
+        <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight mt-4">
           Find the drop. Grab the deal.
         </h1>
         <p className="mt-3 text-lg text-slate-700 max-w-2xl mx-auto">
@@ -41,21 +47,19 @@ export default function HomePage() {
         </p>
 
         {/* Waitlist form */}
-        <div
-          id="waitlist"
-          className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white p-4 md:p-5 shadow-sm"
-        >
+        <div id="waitlist" className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm">
           <form action="/api/subscribe" method="POST" className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               name="email"
               required
               placeholder="you@example.com"
-              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-brand"
+              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white bg-brand hover:opacity-95 active:opacity-90"
+              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
+              style={{ backgroundColor: "var(--brand-primary,#00B4D8)", color: "#fff" }}
             >
               Notify me
             </button>
@@ -89,7 +93,8 @@ export default function HomePage() {
         <div className="text-center mt-10">
           <a
             href="#waitlist"
-            className="inline-flex items-center rounded-xl px-5 py-3 font-medium text-white bg-brand hover:opacity-95"
+            className="inline-flex items-center rounded-xl px-5 py-3 font-medium text-white"
+            style={{ backgroundColor: "var(--brand-primary,#00B4D8)", color: "#fff" }}
           >
             Join the waitlist
           </a>
@@ -105,7 +110,7 @@ export default function HomePage() {
           </div>
           <a
             href="https://t.me/shpree_deals"
-            className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 font-medium text-brand border-brand hover:bg-brand hover:text-white transition"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-900 px-5 py-3 font-medium text-slate-900 hover:bg-slate-50 transition"
           >
             Open Telegram Channel
           </a>
@@ -138,7 +143,6 @@ export default function HomePage() {
   );
 }
 
-/* tiny presentational components */
 function Feature({ title, body }: { title: string; body: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 p-5 bg-white">
@@ -151,7 +155,10 @@ function Feature({ title, body }: { title: string; body: string }) {
 function Step({ n, title, body }: { n: string; title: string; body: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 p-6 bg-white text-center">
-      <div className="mx-auto mb-3 h-10 w-10 rounded-xl text-white grid place-items-center bg-brand">
+      <div
+        className="mx-auto mb-3 h-10 w-10 rounded-xl text-white grid place-items-center"
+        style={{ backgroundColor: "var(--brand-primary,#00B4D8)", color: "#fff" }}
+      >
         {n}
       </div>
       <p className="brand-heading text-sm font-semibold">{title}</p>
