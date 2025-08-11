@@ -10,7 +10,7 @@ export default function HomePage() {
             <img
               src="/logo-horizontal.png"
               alt="Shpree"
-              style={{ height: "40px", width: "auto" }}
+              style={{ height: "100px", width: "auto" }}
             />
             <span className="sr-only">Shpree</span>
           </Link>
