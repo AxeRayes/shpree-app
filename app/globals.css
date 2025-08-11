@@ -1,3 +1,16 @@
+:root{
+  /* Shpree brand (from your logo) */
+  --brand-navy: #0F2742;   /* dark blue (text/logo stroke) */
+  --brand-orange: #E97721; /* basket/orange accent */
+  --text: #0F2742;
+  --bg: #FFFFFF;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+
+
+
+
 :root {
   --brand-primary:#00B4D8;
 }
