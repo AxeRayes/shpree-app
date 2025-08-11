@@ -8,7 +8,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-100">
         <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo-full-light.png" alt="Shpree" className="h-10 w-auto" />
+            <img src="/logo-full-light.png" alt="Shpree" className="logo h-8 w-auto" />
             <span className="sr-only">Shpree</span>
           </Link>
 
@@ -31,7 +31,7 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-10 text-center">
-        <img src="/logo-full-light.png" alt="Shpree" className="mx-auto mb-4 h-64 w-auto" />
+        <img src="/logo-full-light.png" alt="Shpree" className="logo mx-auto mb-4 h-32 w-auto" />
         <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight">
           Find the drop. Grab the deal.
         </h1>
