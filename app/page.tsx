@@ -24,7 +24,7 @@ export default function HomePage() {
           </nav>
           <a
             href="#waitlist"
-            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white bg-brand-primary"
+            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white bg-brand-primary hover:bg-opacity-80"
           >
             Get early access
           </a>
