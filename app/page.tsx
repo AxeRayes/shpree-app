@@ -3,34 +3,33 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white text-slate-900">
-      {/* Header */}
-      <header className="sticky top-0 z-20 bg-white/70 backdrop-blur border-b border-slate-100">
+    <main className="min-h-screen bg-white text-brand">
+      {/* Header (no placeholder icons) */}
+      <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-100">
         <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo-full-light.png" alt="Shpree" className="h-12 w-auto" />
+            <img src="/logo-full-light.png" alt="Shpree" className="h-10 w-auto" />
             <span className="sr-only">Shpree</span>
           </Link>
           <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
-            <a href="#features" className="hover:text-slate-900">Features</a>
-            <a href="#how" className="hover:text-slate-900">How it works</a>
-            <a href="#faq" className="hover:text-slate-900">FAQ</a>
-            <a href="https://t.me/shpree_deals" className="hover:text-slate-900">Telegram</a>
-            <a href="/disclosure" className="hover:text-slate-900">Disclosure</a>
+            <a href="#features" className="hover:text-brand">Features</a>
+            <a href="#how" className="hover:text-brand">How it works</a>
+            <a href="#faq" className="hover:text-brand">FAQ</a>
+            <a href="https://t.me/shpree_deals" className="hover:text-brand">Telegram</a>
+            <a href="/disclosure" className="hover:text-brand">Disclosure</a>
           </nav>
           <a
             href="#waitlist"
-            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white"
-            style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
+            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white bg-brand hover:opacity-95 active:opacity-90"
           >
             Get early access
           </a>
         </div>
       </header>
 
-      {/* Hero */}
+      {/* Hero (no placeholder strip) */}
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-10 text-center">
-        <img src="/logo-full-light.png" alt="Shpree" className="mx-auto mb-4 h-80 w-auto" />
+        <img src="/logo-full-light.png" alt="Shpree" className="mx-auto mb-4 h-64 w-auto" />
         <h1 className="brand-heading text-4xl md:text-5xl font-bold tracking-tight">
           Find the drop. Grab the deal.
         </h1>
@@ -40,19 +39,18 @@ export default function HomePage() {
         </p>
 
         {/* Waitlist form */}
-        <div id="waitlist" className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm">
+        <div id="waitlist" className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white p-4 md:p-5 shadow-sm">
           <form action="/api/subscribe" method="POST" className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               name="email"
               required
               placeholder="you@example.com"
-              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
+              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-brand"
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
-              style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
+              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white bg-brand hover:opacity-95 active:opacity-90"
             >
               Notify me
             </button>
@@ -61,40 +59,17 @@ export default function HomePage() {
             We’ll only email you about Shpree. Unsubscribe anytime.
           </p>
         </div>
-
-        {/* Social proof strip (placeholder) */}
-        <div className="mt-10 text-xs uppercase tracking-wide text-slate-500">
-          Trusted by deal hunters & creators worldwide
-        </div>
       </section>
 
       {/* Features */}
       <section id="features" className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Feature
-            title="Instant price alerts"
-            body="Get notified the moment a product drops below your target or a new coupon appears."
-          />
-          <Feature
-            title="Price history"
-            body="See historical price charts so you know if today’s deal is truly the lowest."
-          />
-          <Feature
-            title="Smart tracking"
-            body="Track products or entire categories (e.g., Monitors under $300, VPN deals in the UK)."
-          />
-          <Feature
-            title="Multi-merchant coverage"
-            body="We scan multiple stores automatically so you always get the best current offer."
-          />
-          <Feature
-            title="Auto-curated top drops"
-            body="Our ‘Spree Score’ ranks deals by discount, history, and reliability."
-          />
-          <Feature
-            title="Telegram + Email"
-            body="Choose instant Telegram pings or a daily email digest—set it and forget it."
-          />
+          <Feature title="Instant price alerts" body="Get notified the moment a product drops below your target or a new coupon appears." />
+          <Feature title="Price history" body="See historical price charts so you know if today’s deal is truly the lowest." />
+          <Feature title="Smart tracking" body="Track products or entire categories (e.g., Monitors under $300, VPN deals in the UK)." />
+          <Feature title="Multi-merchant coverage" body="We scan multiple stores automatically so you always get the best current offer." />
+          <Feature title="Auto-curated top drops" body="Our ‘Spree Score’ ranks deals by discount, history, and reliability." />
+          <Feature title="Telegram + Email" body="Choose instant Telegram pings or a daily email digest—set it and forget it." />
         </div>
       </section>
 
@@ -109,8 +84,7 @@ export default function HomePage() {
         <div className="text-center mt-10">
           <a
             href="#waitlist"
-            className="inline-flex items-center rounded-xl px-5 py-3 font-medium text-white"
-            style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
+            className="inline-flex items-center rounded-xl px-5 py-3 font-medium text-white bg-brand hover:opacity-95"
           >
             Join the waitlist
           </a>
@@ -126,7 +100,7 @@ export default function HomePage() {
           </div>
           <a
             href="https://t.me/shpree_deals"
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-900 px-5 py-3 font-medium text-slate-900 hover:bg-slate-50 transition"
+            className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 font-medium text-brand border-brand hover:bg-brand hover:text-white transition"
           >
             Open Telegram Channel
           </a>
@@ -172,10 +146,7 @@ function Feature({ title, body }: { title: string; body: string }) {
 function Step({ n, title, body }: { n: string; title: string; body: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 p-6 bg-white text-center">
-      <div
-        className="mx-auto mb-3 h-10 w-10 rounded-xl text-white grid place-items-center"
-        style={{ backgroundColor: "var(--brand-primary,#00B4D8)" }}
-      >
+      <div className="mx-auto mb-3 h-10 w-10 rounded-xl text-white grid place-items-center bg-brand">
         {n}
       </div>
       <p className="brand-heading text-sm font-semibold">{title}</p>
