@@ -24,7 +24,8 @@ export default function HomePage() {
           </nav>
           <a
             href="#waitlist"
-            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white bg-brand-primary hover:bg-opacity-80"
+            className="hidden sm:inline-flex items-center rounded-xl px-4 py-2 font-medium text-white"
+            style={{ backgroundColor: "#112D4E" }}
           >
             Get early access
           </a>
@@ -43,8 +44,7 @@ export default function HomePage() {
           Find the drop. Grab the deal.
         </h1>
         <p className="mt-3 text-lg text-slate-700 max-w-2xl mx-auto">
-          Real-time price-drop alerts, price history charts, and smart tracking
-          so you never overpay again.
+          Real-time price-drop alerts, price history charts, and smart tracking so you never overpay again.
         </p>
 
         {/* Waitlist form */}
@@ -80,7 +80,8 @@ export default function HomePage() {
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white bg-brand-primary"
+              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
+              style={{ backgroundColor: "#112D4E" }}
             >
               Notify me
             </button>
@@ -111,24 +112,12 @@ export default function HomePage() {
               }}
               className="flex flex-col gap-3"
             >
-              <input
-                name="url"
-                type="url"
-                required
-                placeholder="Product link"
-                className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
-              />
-              <input
-                name="target"
-                type="number"
-                step="0.01"
-                required
-                placeholder="Target price (e.g. 99.99)"
-                className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
-              />
+              <input name="url" type="url" required placeholder="Product link" className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400" />
+              <input name="target" type="number" step="0.01" required placeholder="Target price (e.g. 99.99)" className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400" />
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white bg-brand-primary"
+                className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
+                style={{ backgroundColor: "#112D4E" }}
               >
                 Start Tracking
               </button>
@@ -141,8 +130,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features, How it works, FAQ, Footer */}
-      {/* Keep the same structure as you already have for these sections */}
+      {/* Footer */}
+      <footer className="border-t border-slate-100">
+        <div className="mx-auto max-w-6xl px-6 py-8 text-xs text-slate-500 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+          <div>© {new Date().getFullYear()} Shpree · An operating brand of Rayes Group</div>
+          <div className="flex gap-4">
+            <a href="/disclosure" className="underline">Affiliate Disclosure</a>
+            <a href="/privacy" className="underline">Privacy</a>
+            <a href="/terms" className="underline">Terms</a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
