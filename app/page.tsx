@@ -10,7 +10,7 @@ export default function HomePage() {
             <img
               src="/logo-full-light.png"
               alt="Shpree"
-              className="h-10 w-auto" // Menu logo height = 40px
+              className="h-10 w-auto"
               style={{ height: "40px" }}
             />
             <span className="sr-only">Shpree</span>
@@ -215,41 +215,5 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
-  );
-}
-
-/* tiny presentational components */
-function Feature({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 p-5 bg-white">
-      <p className="brand-heading text-sm font-semibold">{title}</p>
-      <p className="mt-1 text-sm text-slate-600">{body}</p>
-    </div>
-  );
-}
-
-function Step({ n, title, body }: { n: string; title: string; body: string }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 p-6 bg-white text-center">
-      <div
-        className="mx-auto mb-3 h-10 w-10 rounded-xl text-white grid place-items-center"
-        style={{ backgroundColor: "#112D4E" }}
-      >
-        {n}
-      </div>
-      <p className="brand-heading text-sm font-semibold">{title}</p>
-      <p className="mt-1 text-sm text-slate-600">{body}</p>
-    </div>
-  );
-}
-
-function Faq({ q, a }: { q: string; a: string }) {
-  return (
-    <details className="rounded-xl border border-slate-200 bg-white p-4">
-      <summary className="cursor-pointer list-none">
-        <span className="brand-heading text-sm font-semibold">{q}</span>
-      </summary>
-      <p className="mt-2 text-sm text-slate-600">{a}</p>
-    </details>
   );
 }
