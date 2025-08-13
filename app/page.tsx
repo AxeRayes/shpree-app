@@ -48,48 +48,36 @@ export default function HomePage() {
           so you never overpay again.
         </p>
 
-        {/* Waitlist form */}
-        <div
-          id="waitlist"
-          className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm"
-        >
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
-              if (!email) return;
+      {/* Waitlist form */}
+<div
+  id="waitlist"
+  className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm"
+>
+  <form
+    action="https://formspree.io/f/mgvzdgez"
+    method="POST"
+    className="flex flex-col sm:flex-row gap-3"
+  >
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+      className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
+    />
+    <button
+      type="submit"
+      className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
+      style={{ backgroundColor: "#112D4E" }}
+    >
+      Notify me
+    </button>
+  </form>
+  <p className="mt-3 text-xs text-slate-500">
+    We’ll only email you about Shpree. Unsubscribe anytime.
+  </p>
+</div>
 
-              const res = await fetch("/api/subscribe", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
-              });
-
-              const data = await res.json();
-              if (res.ok && data.success) { alert("You’re on the waitlist!"); form.reset(); }
-              else { alert(data.error || "Something went wrong."); }
-            }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="you@example.com"
-              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
-            />
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
-              style={{ backgroundColor: "#112D4E" }}
-            >
-              Notify me
-            </button>
-          </form>
-          <p className="mt-3 text-xs text-slate-500">
-            We’ll only email you about Shpree. Unsubscribe anytime.
-          </p>
 
           {/* Product Tracking form */}
           <div className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm">
