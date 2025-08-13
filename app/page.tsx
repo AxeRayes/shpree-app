@@ -58,7 +58,6 @@ export default function HomePage() {
             method="POST"
             className="flex flex-col gap-3"
           >
-            {/* Your email so we can reply */}
             <input
               type="email"
               name="email"
@@ -66,7 +65,6 @@ export default function HomePage() {
               placeholder="Your email"
               className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
             />
-            {/* Tracking fields */}
             <input
               name="url"
               type="url"
@@ -82,11 +80,9 @@ export default function HomePage() {
               placeholder="Target price (e.g. 99.99)"
               className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
             />
-            {/* Optional helpers */}
             <input type="hidden" name="_subject" value="New Shpree product tracking request" />
-            <input type="hidden" name="_captcha" value="false" />
-            {/* If you add app/thanks/page.tsx, keep the next line; otherwise remove it */}
-            <input type="hidden" name="_next" value="https://shpree.com/thanks" />
+            {/* If you create app/thanks/page.tsx, keep the next line; otherwise remove it */}
+            {/* <input type="hidden" name="_next" value="https://shpree.com/thanks" /> */}
             <button
               type="submit"
               className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
@@ -149,8 +145,8 @@ export default function HomePage() {
             rows={4}
             required
           />
-          {/* If you add app/thanks/page.tsx, keep the next line; otherwise remove it */}
-          <input type="hidden" name="_next" value="https://shpree.com/thanks" />
+          {/* If you create app/thanks/page.tsx, keep the next line; otherwise remove it */}
+          {/* <input type="hidden" name="_next" value="https://shpree.com/thanks" /> */}
           <button
             type="submit"
             className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
