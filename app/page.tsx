@@ -54,79 +54,55 @@ export default function HomePage() {
   className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm"
 >
   <form
-    action="https://formspree.io/f/mgvzdgez"
-    method="POST"
-    className="flex flex-col sm:flex-row gap-3"
+  action="https://formspree.io/f/mgvzdgez"
+  method="POST"
+  className="flex flex-col gap-3"
+>
+  {/* We'll include email so you can reply */}
+  <input
+    type="email"
+    name="email"
+    required
+    placeholder="Your email"
+    className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
+  />
+
+  {/* These fields will arrive in your Formspree email */}
+  <input
+    name="url"
+    type="url"
+    required
+    placeholder="Product link"
+    className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
+  />
+  <input
+    name="target"
+    type="number"
+    step="0.01"
+    required
+    placeholder="Target price (e.g. 99.99)"
+    className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
+  />
+
+  {/* Optional helpers */}
+  <input type="hidden" name="_subject" value="New Shpree product tracking request" />
+  <input type="hidden" name="_captcha" value="false" />
+  {/* Redirect to a thank-you page after submit (optional, see step 2) */}
+  {/* <input type="hidden" name="_next" value="https://shpree.com/thanks" /> */}
+
+  <button
+    type="submit"
+    className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
+    style={{ backgroundColor: "#112D4E" }}
   >
-    <input
-      type="email"
-      name="email"
-      required
-      placeholder="you@example.com"
-      className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
-    />
-    <button
-      type="submit"
-      className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
-      style={{ backgroundColor: "#112D4E" }}
-    >
-      Notify me
-    </button>
-  </form>
+    Start Tracking
+  </button>
+</form>
+
   <p className="mt-3 text-xs text-slate-500">
     We’ll only email you about Shpree. Unsubscribe anytime.
   </p>
 </div>
-
-
-          {/* Product Tracking form */}
-          <div className="mx-auto mt-8 max-w-xl rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-4 md:p-5 shadow-sm">
-            <h3 className="brand-heading text-lg font-semibold mb-3">Track a product</h3>
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const f = e.currentTarget;
-                const url = (f.elements.namedItem("url") as HTMLInputElement).value.trim();
-                const target = (f.elements.namedItem("target") as HTMLInputElement).value.trim();
-                if (!url || !target) return;
-
-                const res = await fetch("/api/track", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ url, target }),
-                });
-                const data = await res.json();
-                alert(res.ok ? "Product tracking started!" : (data.error || "Something went wrong."));
-                if (res.ok) f.reset();
-              }}
-              className="flex flex-col gap-3"
-            >
-              <input
-                name="url"
-                type="url"
-                required
-                placeholder="Product link"
-                className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
-              />
-              <input
-                name="target"
-                type="number"
-                step="0.01"
-                required
-                placeholder="Target price (e.g. 99.99)"
-                className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-slate-400"
-              />
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white"
-                style={{ backgroundColor: "#112D4E" }}
-              >
-                Start Tracking
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
 
 
 {/* Contact Form */}
